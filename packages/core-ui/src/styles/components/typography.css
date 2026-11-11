@@ -1,0 +1,92 @@
+.rk-heading {
+  margin: 0 0 var(--rk-space-3);
+  font-family: var(--rk-font-heading);
+  font-weight: 700;
+  line-height: var(--rk-leading-tight);
+  letter-spacing: var(--rk-tracking-heading);
+  color: var(--rk-text);
+}
+.rk-heading--1 { font-size: var(--rk-text-h1); text-transform: uppercase; }
+.rk-heading--2 { font-size: var(--rk-text-h2); text-transform: uppercase; }
+.rk-heading--3 { font-size: var(--rk-text-h3); text-transform: uppercase; }
+.rk-heading--4 { font-size: var(--rk-text-h4); }
+.rk-heading--5 { font-size: var(--rk-text-h5); }
+.rk-heading--6 { font-size: var(--rk-text-h6); }
+
+/* Section title with an underline rule (portfolio h2 style). */
+.rk-heading--underline {
+  display: inline-block;
+  padding-bottom: 0.4rem;
+  margin-bottom: var(--rk-space-6);
+  border-bottom: 2px solid var(--rk-border);
+}
+.rk-heading--accent { color: var(--rk-primary); }
+.rk-heading--accent-word .rk-accent,
+.rk-accent { color: var(--rk-primary); }
+
+.rk-subheading {
+  margin: 0 0 var(--rk-space-2);
+  font-family: var(--rk-font-heading);
+  font-size: var(--rk-text-display);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--rk-text);
+}
+.rk-subheading a {
+  font-weight: 600;
+}
+
+.rk-text { margin: 0 0 var(--rk-space-4); line-height: var(--rk-leading-body); }
+.rk-text--lead { font-size: var(--rk-text-lead); line-height: var(--rk-leading-loose); }
+.rk-text--sm { font-size: var(--rk-text-sm); }
+.rk-text--xs { font-size: var(--rk-text-xs); }
+.rk-text--muted { color: var(--rk-text-muted); }
+.rk-text--primary { color: var(--rk-primary); }
+.rk-text--danger { color: var(--rk-danger); }
+.rk-text--success { color: var(--rk-success); }
+.rk-text--bold { font-weight: 700; }
+.rk-text--flush { margin: 0; }
+
+/* Lead / muted modifiers usable on any element */
+.rk-muted { color: var(--rk-text-muted); }
+
+.rk-divider {
+  border: none;
+  border-top: 1px solid var(--rk-border);
+  opacity: 0.8;
+  margin: var(--rk-space-7) 0;
+}
+.rk-divider--flush { margin: 0; }
+
+.rk-code {
+  font-family: var(--rk-font-mono);
+  font-size: 0.875em;
+  padding: 0.15em 0.4em;
+  border-radius: 6px;
+  background-color: color-mix(in srgb, var(--rk-primary) 8%, transparent);
+  color: var(--rk-primary);
+}
+
+/* Bordered detail line: icon + text with accent rule (contact details). */
+.rk-detail {
+  display: flex;
+  align-items: center;
+  padding: 6px 0;
+}
+.rk-detail__icon {
+  display: flex;
+  justify-content: center;
+  min-width: 44px;
+  padding: 12px;
+  font-size: 20px;
+  color: var(--rk-primary);
+}
+.rk-detail__text {
+  margin: 0;
+  padding-left: 12px;
+  border-left: 2px solid var(--rk-primary);
+  font-size: var(--rk-text-sm);
+  font-weight: 500;
+  color: var(--rk-text);
+}

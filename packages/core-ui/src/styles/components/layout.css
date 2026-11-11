@@ -1,0 +1,100 @@
+.rk-container {
+  width: 100%;
+  max-width: var(--rk-container-max);
+  margin-inline: auto;
+  padding-inline: var(--rk-space-4);
+}
+
+/* Page section (portfolio "resume-section"). */
+.rk-section {
+  padding: 3.5rem var(--rk-space-4);
+}
+.rk-section--full {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .rk-section--full { min-height: 100vh; }
+}
+@media (min-width: 992px) {
+  .rk-section { padding: var(--rk-space-9) var(--rk-space-8); }
+}
+
+.rk-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--rk-stack-gap, var(--rk-space-4));
+}
+.rk-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--rk-stack-gap, var(--rk-space-3));
+}
+
+/* Profile / avatar image frame. */
+.rk-avatar {
+  display: inline-block;
+  overflow: hidden;
+  border: 4px solid var(--rk-border);
+  border-radius: var(--rk-radius-lg);
+  box-shadow: 0 8px 16px var(--rk-shadow-color);
+  transition: all var(--rk-duration-slow) ease;
+  line-height: 0;
+}
+.rk-avatar--circle { border-radius: 50%; }
+.rk-avatar > img,
+.rk-avatar > picture,
+.rk-avatar > picture > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.rk-avatar--hover:hover {
+  transform: translateY(var(--rk-lift-md));
+  box-shadow: 0 12px 20px var(--rk-shadow-color);
+  border-color: var(--rk-primary);
+}
+
+/* Bordered panel for charts / embeds. */
+.rk-panel {
+  display: inline-block;
+  padding: var(--rk-space-5);
+  border: 1px solid var(--rk-border);
+  border-radius: var(--rk-radius-md);
+  background-color: var(--rk-surface);
+  box-shadow: 0 4px 6px -1px var(--rk-shadow-color);
+}
+.rk-embed {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--rk-border);
+  border-radius: var(--rk-radius-md);
+  box-shadow: 0 4px 6px -1px var(--rk-shadow-color);
+}
+
+/* Alert / callout */
+.rk-alert {
+  --rk-alert-tone: var(--rk-primary);
+  display: flex;
+  gap: var(--rk-space-3);
+  padding: var(--rk-space-4) 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--rk-alert-tone) 30%, var(--rk-border));
+  border-left: 4px solid var(--rk-alert-tone);
+  border-radius: var(--rk-radius-sm);
+  background-color: color-mix(in srgb, var(--rk-alert-tone) 6%, var(--rk-surface));
+  color: var(--rk-text);
+  font-size: var(--rk-text-sm);
+}
+.rk-alert--success { --rk-alert-tone: var(--rk-success); }
+.rk-alert--warning { --rk-alert-tone: var(--rk-warning); }
+.rk-alert--danger  { --rk-alert-tone: var(--rk-danger); }
+.rk-alert__title {
+  display: block;
+  margin-bottom: 0.15rem;
+  font-weight: 700;
+  color: var(--rk-alert-tone);
+}

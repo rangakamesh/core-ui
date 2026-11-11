@@ -1,0 +1,87 @@
+/* Badge: compact label (dates, statuses). */
+.rk-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--rk-space-1);
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: var(--rk-radius-sm);
+  font-family: var(--rk-font-body);
+  font-size: var(--rk-text-xs);
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+.rk-badge--sm { padding: 0.3rem 0.6rem; font-size: 0.75rem; }
+
+.rk-badge--solid {
+  background-color: var(--rk-primary);
+  color: var(--rk-primary-contrast);
+}
+.rk-badge--subtle {
+  background-color: color-mix(in srgb, var(--rk-primary) 10%, transparent);
+  color: var(--rk-primary);
+}
+.rk-badge--outline {
+  border-color: var(--rk-border);
+  color: var(--rk-text);
+  background-color: var(--rk-surface);
+}
+
+.rk-badge--success { --rk-badge-tone: var(--rk-success); }
+.rk-badge--warning { --rk-badge-tone: var(--rk-warning); }
+.rk-badge--danger  { --rk-badge-tone: var(--rk-danger); }
+.rk-badge--solid:is(.rk-badge--success, .rk-badge--warning, .rk-badge--danger) {
+  background-color: var(--rk-badge-tone);
+  color: #fff;
+}
+.rk-badge--subtle:is(.rk-badge--success, .rk-badge--warning, .rk-badge--danger) {
+  background-color: color-mix(in srgb, var(--rk-badge-tone) 12%, transparent);
+  color: var(--rk-badge-tone);
+}
+.rk-badge--outline:is(.rk-badge--success, .rk-badge--warning, .rk-badge--danger) {
+  border-color: var(--rk-badge-tone);
+  color: var(--rk-badge-tone);
+}
+
+/* Chip: pill with optional icon (skills / tech list). */
+.rk-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--rk-space-2);
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--rk-border);
+  border-radius: var(--rk-radius-full);
+  background-color: var(--rk-surface);
+  color: var(--rk-text);
+  font-size: var(--rk-text-sm);
+  line-height: 1.2;
+  text-decoration: none;
+  box-shadow: var(--rk-shadow-xs);
+  transition: all var(--rk-duration-base) var(--rk-ease);
+}
+.rk-chip__icon {
+  display: inline-flex;
+  font-size: 1.15rem;
+}
+.rk-chip:hover,
+.rk-chip[aria-pressed="true"],
+.rk-chip--active {
+  transform: translateY(var(--rk-lift));
+  border-color: var(--rk-primary);
+  background-color: color-mix(in srgb, var(--rk-primary) 8%, transparent);
+  color: var(--rk-primary);
+  box-shadow: 0 4px 8px color-mix(in srgb, var(--rk-primary) 15%, transparent);
+  text-decoration: none;
+}
+button.rk-chip,
+a.rk-chip {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.rk-chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--rk-space-2);
+}

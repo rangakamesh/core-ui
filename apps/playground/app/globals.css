@@ -1,0 +1,38 @@
+/* Wire the next/font family into the kit. Unlayered, so it beats the kit's defaults. */
+:root {
+  --rk-font-heading: var(--font-saira), "Arial Narrow", sans-serif;
+}
+
+/* Playground-only helpers */
+.pg-swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--rk-space-3);
+}
+.pg-swatch {
+  border: 1px solid var(--rk-border);
+  border-radius: var(--rk-radius-sm);
+  overflow: hidden;
+  background: var(--rk-surface);
+  font-size: var(--rk-text-xs);
+}
+.pg-swatch__color {
+  height: 56px;
+  border-bottom: 1px solid var(--rk-border);
+}
+.pg-swatch__meta {
+  padding: 0.5rem 0.65rem;
+  display: flex;
+  flex-direction: column;
+}
+.pg-swatch__meta code {
+  color: var(--rk-text-muted);
+  font-size: 0.75rem;
+}
+.pg-grid-2 {
+  display: grid;
+  gap: var(--rk-space-5);
+}
+@media (min-width: 900px) {
+  .pg-grid-2 { grid-template-columns: 1fr 1fr; }
+}

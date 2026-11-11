@@ -1,0 +1,55 @@
+/* Circular icon button: social icons, theme toggle. */
+.rk-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border: 1px solid var(--rk-border);
+  border-radius: 50%;
+  background-color: var(--rk-surface);
+  color: var(--rk-text);
+  font-size: 1.25rem;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: var(--rk-shadow-sm);
+  transition: all var(--rk-duration-base) var(--rk-ease);
+  -webkit-tap-highlight-color: transparent;
+}
+.rk-icon-btn:hover {
+  text-decoration: none;
+}
+.rk-icon-btn svg {
+  width: 1em;
+  height: 1em;
+}
+
+.rk-icon-btn--sm { width: 2.25rem; height: 2.25rem; font-size: 1rem; }
+.rk-icon-btn--lg { width: 3.5rem; height: 3.5rem; font-size: 1.5rem; }
+
+/* Fills with primary on hover (social links). */
+.rk-icon-btn--fill:hover {
+  background-color: var(--rk-primary);
+  border-color: var(--rk-primary);
+  color: var(--rk-primary-contrast);
+  transform: translateY(var(--rk-lift));
+  box-shadow: 0 4px 8px color-mix(in srgb, var(--rk-primary) 20%, transparent);
+}
+
+/* Grows slightly on hover (theme toggle). */
+.rk-icon-btn--pop:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px var(--rk-shadow-color);
+}
+.rk-icon-btn--pop:active {
+  transform: scale(0.95);
+}
+
+.rk-icon-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--rk-space-4);
+}

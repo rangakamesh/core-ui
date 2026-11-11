@@ -1,0 +1,82 @@
+.rk-card {
+  display: block;
+  position: relative;
+  background-color: var(--rk-surface);
+  color: var(--rk-text);
+  border: 1px solid var(--rk-border);
+  border-radius: var(--rk-radius-md);
+  box-shadow: var(--rk-shadow-md);
+  overflow: hidden;
+  transition: all var(--rk-duration-slow) var(--rk-ease);
+}
+
+.rk-card--pad-none { padding: 0; }
+.rk-card--pad-sm   { padding: var(--rk-space-4); }
+.rk-card--pad-md   { padding: var(--rk-space-5); }
+.rk-card--pad-lg   { padding: var(--rk-space-6); }
+
+/* Subtle lift (content cards: experience, education). */
+.rk-card--hover:hover {
+  transform: translateY(var(--rk-lift-md));
+  box-shadow: var(--rk-shadow-lg);
+  border-color: color-mix(in srgb, var(--rk-primary) 20%, transparent);
+}
+
+/* Stronger lift (grid tiles: projects). */
+.rk-card--interactive:hover {
+  transform: translateY(var(--rk-lift-lg));
+  box-shadow: var(--rk-shadow-xl);
+  border-color: color-mix(in srgb, var(--rk-primary) 30%, transparent);
+}
+
+.rk-card__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--rk-space-2);
+  margin-bottom: var(--rk-space-4);
+}
+@media (min-width: 768px) {
+  .rk-card__header { flex-direction: row; }
+}
+
+.rk-card__title {
+  margin: 0 0 var(--rk-space-2);
+  font-family: var(--rk-font-heading);
+  font-size: var(--rk-text-card-title);
+  font-weight: 700;
+  line-height: var(--rk-leading-tight);
+  text-transform: uppercase;
+  color: var(--rk-text);
+}
+
+.rk-card__media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-bottom: 1px solid var(--rk-border);
+}
+
+.rk-card__body {
+  padding: var(--rk-space-5);
+}
+
+.rk-card__actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--rk-space-3);
+  margin-top: 1.25rem;
+}
+.rk-card__actions > :only-child {
+  grid-column: 1 / -1;
+}
+
+/* Responsive auto-fill grid of cards. */
+.rk-card-grid {
+  display: grid;
+  gap: var(--rk-space-5);
+  grid-template-columns: repeat(auto-fill, minmax(min(var(--rk-card-min-width), 100%), 1fr));
+  align-items: start;
+}

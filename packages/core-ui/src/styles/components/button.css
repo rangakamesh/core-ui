@@ -1,0 +1,114 @@
+.rk-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--rk-space-2);
+  padding: 0.65rem 1.5rem;
+  border: 1px solid transparent;
+  border-radius: var(--rk-radius-sm);
+  font-family: var(--rk-font-body);
+  font-size: var(--rk-text-sm);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: var(--rk-shadow-xs);
+  transition: all 250ms var(--rk-ease);
+  -webkit-tap-highlight-color: transparent;
+}
+.rk-btn:hover {
+  text-decoration: none;
+  transform: translateY(var(--rk-lift));
+}
+.rk-btn:active {
+  transform: translateY(0);
+}
+.rk-btn:disabled,
+.rk-btn[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none;
+}
+
+/* Sizes */
+.rk-btn--sm { padding: 0.4rem 1rem; font-size: var(--rk-text-xs); }
+.rk-btn--lg { padding: 0.85rem 2rem; font-size: var(--rk-text-base); }
+.rk-btn--block { display: flex; width: 100%; }
+
+/* Variants */
+.rk-btn--primary {
+  background-color: var(--rk-primary);
+  color: var(--rk-primary-contrast);
+}
+.rk-btn--primary:hover {
+  background-color: var(--rk-primary-hover);
+  color: var(--rk-primary-contrast);
+  box-shadow: var(--rk-shadow-primary);
+}
+
+.rk-btn--secondary {
+  background-color: var(--rk-surface);
+  color: var(--rk-text);
+  border-color: var(--rk-border);
+}
+.rk-btn--secondary:hover {
+  background-color: var(--rk-bg);
+  border-color: var(--rk-primary);
+  color: var(--rk-primary);
+  box-shadow: 0 4px 12px var(--rk-shadow-color);
+}
+
+/* Neutral at rest, fills with primary on hover (the "Download CV" button). */
+.rk-btn--outline {
+  background-color: var(--rk-surface);
+  color: var(--rk-text);
+  border-color: var(--rk-border);
+}
+.rk-btn--outline:hover {
+  background-color: var(--rk-primary);
+  border-color: var(--rk-primary);
+  color: var(--rk-primary-contrast);
+  box-shadow: var(--rk-shadow-primary);
+}
+
+.rk-btn--ghost {
+  background-color: transparent;
+  color: var(--rk-text-muted);
+  box-shadow: none;
+}
+.rk-btn--ghost:hover {
+  background-color: var(--rk-bg);
+  color: var(--rk-primary);
+  transform: none;
+}
+
+.rk-btn--danger {
+  background-color: var(--rk-danger);
+  color: #fff;
+}
+.rk-btn--danger:hover {
+  filter: brightness(0.92);
+  color: #fff;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--rk-danger) 25%, transparent);
+}
+
+/* Stack buttons full-width on small screens, like the portfolio. */
+@media (max-width: 768px) {
+  .rk-btn--responsive { width: 100%; }
+}
+
+/* Loading spinner */
+.rk-btn__spinner {
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: rk-spin 0.7s linear infinite;
+}
+@keyframes rk-spin {
+  to { transform: rotate(360deg); }
+}

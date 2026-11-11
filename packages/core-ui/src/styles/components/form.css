@@ -1,0 +1,103 @@
+.rk-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: var(--rk-space-4);
+}
+
+.rk-label {
+  display: inline-block;
+  font-family: var(--rk-font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--rk-text);
+}
+.rk-label__required {
+  color: var(--rk-danger);
+  margin-left: 2px;
+}
+
+.rk-input,
+.rk-textarea,
+.rk-select {
+  display: block;
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--rk-border);
+  border-radius: var(--rk-radius-sm);
+  background-color: var(--rk-input-bg);
+  color: var(--rk-text);
+  font-family: var(--rk-font-body);
+  font-size: var(--rk-text-base);
+  font-weight: 400;
+  line-height: 1.5;
+  box-shadow: none;
+  transition: all var(--rk-duration-base) ease;
+  appearance: none;
+}
+.rk-input::placeholder,
+.rk-textarea::placeholder {
+  color: var(--rk-text-muted);
+  opacity: 0.6;
+}
+.rk-input:focus,
+.rk-textarea:focus,
+.rk-select:focus {
+  outline: none;
+  border-color: var(--rk-primary);
+  box-shadow: var(--rk-shadow-ring);
+}
+.rk-input:disabled,
+.rk-textarea:disabled,
+.rk-select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.rk-input[aria-invalid="true"],
+.rk-textarea[aria-invalid="true"],
+.rk-select[aria-invalid="true"] {
+  border-color: var(--rk-danger);
+}
+.rk-input[aria-invalid="true"]:focus,
+.rk-textarea[aria-invalid="true"]:focus,
+.rk-select[aria-invalid="true"]:focus {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--rk-danger) 15%, transparent);
+}
+
+.rk-textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+.rk-select {
+  padding-right: 2.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%2364748B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m4 6 4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  background-size: 1rem;
+}
+
+.rk-hint {
+  margin: 0;
+  font-size: var(--rk-text-xs);
+  color: var(--rk-text-muted);
+}
+.rk-hint--error {
+  color: var(--rk-danger);
+}
+
+/* Checkbox / radio use the brand colour natively. */
+.rk-check {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--rk-space-2);
+  font-size: var(--rk-text-sm);
+  cursor: pointer;
+}
+.rk-check input {
+  width: 1.05rem;
+  height: 1.05rem;
+  margin: 0;
+  accent-color: var(--rk-primary);
+  cursor: pointer;
+}

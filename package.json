@@ -1,0 +1,20 @@
+{
+  "name": "core-ui-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "npm run build -w @rangakamesh/core-ui",
+    "dev": "npm run build && concurrently -k -n ui,play -c teal,gray \"npm run dev -w @rangakamesh/core-ui\" \"npm run dev -w playground\"",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "npm run build && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^3.0.3",
+    "concurrently": "^9.2.1"
+  }
+}

@@ -1,0 +1,39 @@
+# On every push to main:
+#  - if there are pending changesets, opens/updates a "Version Packages" PR
+#  - when that PR is merged, builds and publishes the new version to npm
+# Requires the NPM_TOKEN repository secret (an npm "Automation" token).
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          registry-url: https://registry.npmjs.org
+      - run: npm ci
+      - run: npm run typecheck
+      - uses: changesets/action@v1
+        with:
+          publish: npm run release
+          version: npm run version-packages
+          title: "chore: release @rangakamesh/core-ui"
+          commit: "chore: release @rangakamesh/core-ui"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
