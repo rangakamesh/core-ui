@@ -120,8 +120,8 @@ export default function Page() {
             </Cluster>
             <Subheading as="h3">Icon buttons</Subheading>
             <IconGroup>
-              <IconLink href="https://github.com/rangakamesh" label="GitHub"><GitHub /></IconLink>
-              <IconLink href="https://linkedin.com" label="LinkedIn"><LinkedIn /></IconLink>
+              <IconLink href="https://github.com" label="GitHub"><GitHub /></IconLink>
+              <IconLink href="https://www.linkedin.com" label="LinkedIn"><LinkedIn /></IconLink>
               <IconLink href="mailto:hello@example.com" label="Email"><Mail /></IconLink>
             </IconGroup>
           </Stack>
@@ -134,8 +134,8 @@ export default function Page() {
             <Card>
               <CardHeader>
                 <div>
-                  <Heading level={3} className="rk-text--flush">Okta / Auth0</Heading>
-                  <Subheading muted>Toronto, Ontario</Subheading>
+                  <Heading level={3} className="rk-text--flush">Acme Corp</Heading>
+                  <Subheading muted>Senior Engineer · Remote</Subheading>
                 </div>
                 <Badge>2022 – Present</Badge>
               </CardHeader>
@@ -145,7 +145,7 @@ export default function Page() {
             </Card>
 
             <CardGrid>
-              {["Nutrition tracker", "Piggy bank", "Finance tracker"].map((name) => (
+              {["Project Alpha", "Project Beta", "Project Gamma"].map((name) => (
                 <Card key={name} padding="none" hover="interactive">
                   <CardBody>
                     <CardTitle>{name}</CardTitle>

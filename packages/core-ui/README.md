@@ -14,6 +14,8 @@ Personal React component library and design tokens, styled after [rangakamesh.ne
 npm install @rangakamesh/core-ui
 ```
 
+Update later with `npm update @rangakamesh/core-ui`.
+
 ## Set up in a Next.js app
 
 **1. Root layout** (`app/layout.tsx`)
@@ -63,8 +65,8 @@ export default function Page() {
     <Card>
       <CardHeader>
         <div>
-          <Heading level={3}>Okta / Auth0</Heading>
-          <Subheading muted>Toronto, Ontario</Subheading>
+          <Heading level={3}>Acme Corp</Heading>
+          <Subheading muted>Senior Engineer · Remote</Subheading>
         </div>
         <Badge>2022 – Present</Badge>
       </CardHeader>
@@ -102,7 +104,7 @@ export function Nav() {
   return (
     <SideNav
       linkComponent={Link}
-      brand="Ranga Kamesh"
+      brand="My Site"
       items={items.map((i) => ({ ...i, active: pathname === i.href }))}
       footer={<ThemeToggle />}
     />

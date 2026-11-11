@@ -3,6 +3,13 @@
   "version": "0.1.0",
   "description": "Personal React UI kit and design tokens, styled after rangakamesh.net. Built for Next.js.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rangakamesh/core-ui.git",
+    "directory": "packages/core-ui"
+  },
+  "homepage": "https://github.com/rangakamesh/core-ui#readme",
+  "bugs": "https://github.com/rangakamesh/core-ui/issues",
   "type": "module",
   "sideEffects": [
     "**/*.css"

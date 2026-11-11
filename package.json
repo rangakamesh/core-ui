@@ -10,8 +10,7 @@
     "dev": "npm run build && concurrently -k -n ui,play -c teal,gray \"npm run dev -w @rangakamesh/core-ui\" \"npm run dev -w playground\"",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "changeset": "changeset",
-    "version-packages": "changeset version",
-    "release": "npm run build && changeset publish"
+    "release": "node scripts/release.mjs"
   },
   "devDependencies": {
     "@changesets/cli": "^3.0.3",

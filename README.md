@@ -11,7 +11,7 @@ core-ui/
 │   ├── src/client/            ← "use client" components (theme, side nav)
 │   └── scripts/build-css.ts   ← generates dist/styles.css, tokens.css, tailwind.css
 ├── apps/playground/           ← Next.js live style guide (consumes the package like a real app)
-└── .github/workflows/         ← automated releases via Changesets
+└── scripts/release.mjs        ← `npm run release`: local publish to npmjs.com
 ```
 
 Usage docs for consuming apps are in [packages/core-ui/README.md](packages/core-ui/README.md).
@@ -37,17 +37,33 @@ npm run typecheck  # typecheck library + playground
    - **patch**: colour/spacing tweaks, bug fixes
    - **minor**: new components or props
    - **major**: renamed/removed components, props or `--rk-*` variables
-3. Commit and push to `main`. The Release workflow opens a "Version Packages" PR. Merging it publishes to npm.
-4. In each project: `npm update @rangakamesh/core-ui` (or `npm i @rangakamesh/core-ui@latest`).
+3. Commit the changeset with your changes and push.
+4. `npm run release` publishes the new version to npmjs.com (see below).
+5. In each project: `npm update @rangakamesh/core-ui` (or `npm i @rangakamesh/core-ui@latest`).
 
 Projects using a `^` range only take non-breaking updates when they run `npm update`, so a breaking redesign is opt-in per project. (While on `0.x`, npm treats each minor as breaking: `^0.1.0` won't pick up `0.2.0`. Release `1.0.0` once the API feels settled.)
 
-## One-time publishing setup
+## Publishing (from your machine)
 
-1. Create an npm account named `rangakamesh` (the `@rangakamesh` scope = your npm username), or change the package name in `packages/core-ui/package.json`.
-2. Create a GitHub repo for this folder and push it.
-3. npm → Access Tokens → **Granular/Automation token** with publish rights → add it as the `NPM_TOKEN` repository secret.
-4. Manual first publish (optional): `npm login && npm run release`.
+Releases are published manually to **npmjs.com** with [`scripts/release.mjs`](scripts/release.mjs):
+
+```bash
+export NPM_TOKEN=npm_xxx           # npm access token with publish rights; keep it out of the repo
+npm run release -- --dry-run       # optional: run every check, publish nothing
+npm run release                    # the real release
+```
+
+The script:
+1. Checks that `NPM_TOKEN` is set and valid (`npm whoami`), that you're on the default branch (`master`) with a clean tree, and that you're not behind `origin`.
+2. Applies pending changesets, which bumps the version and updates `CHANGELOG.md`. If that version is already on npm, it stops and asks you to add a changeset.
+3. Runs `typecheck` and `build`.
+4. Asks for confirmation, then commits the version bump, runs `npm publish`, creates tag `vX.Y.Z`, and pushes the commit and tag.
+
+Flags: `--dry-run`, `--yes` (skip the prompt), `--otp=123456` (if your npm account asks for a 2FA code when publishing).
+
+The token is only read from the environment. npm receives a temporary config file containing the literal text `${NPM_TOKEN}`, so the token value never touches disk or the repo.
+
+**One-time setup:** create an npmjs.com account named `rangakamesh` (this gives you the `@rangakamesh` scope), then go to Access Tokens → **Granular Access Token** with read and write access to packages. If your account enforces 2FA for publishing, either enable "bypass 2FA" on the token or pass `--otp`.
 
 ### Trying it in a local project before publishing
 
