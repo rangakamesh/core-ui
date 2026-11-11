@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Saira_Extra_Condensed } from "next/font/google";
-import { ThemeScript } from "@rangakamesh/core-ui";
-import { ThemeProvider } from "@rangakamesh/core-ui/client";
-import "@rangakamesh/core-ui/styles.css";
+import { ThemeScript } from "@rangakamesh-packages/core-ui";
+import { ThemeProvider } from "@rangakamesh-packages/core-ui/client";
+import "@rangakamesh-packages/core-ui/styles.css";
 import "./globals.css";
 
 // Self-hosted by next/font, then handed to the kit through --rk-font-heading.
@@ -15,7 +15,7 @@ const heading = Saira_Extra_Condensed({
 
 export const metadata: Metadata = {
   title: "core-ui playground",
-  description: "Live style guide for @rangakamesh/core-ui",
+  description: "Live style guide for @rangakamesh-packages/core-ui",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -1,5 +1,5 @@
 {
-  "name": "@rangakamesh/core-ui",
+  "name": "@rangakamesh-packages/core-ui",
   "version": "0.1.0",
   "description": "Personal React UI kit and design tokens, styled after rangakamesh.net. Built for Next.js.",
   "license": "MIT",

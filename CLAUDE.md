@@ -2,7 +2,7 @@
 
 Guidance for Claude (and any contributor) working in this repository.
 
-`@rangakamesh/core-ui` is an open-source React component library and design-token set for Next.js (App Router, React Server Components). It is a **public repository**, so read [Public repository: privacy rules](#public-repository-privacy-rules) before writing any content.
+`@rangakamesh-packages/core-ui` is an open-source React component library and design-token set for Next.js (App Router, React Server Components). It is a **public repository**, so read [Public repository: privacy rules](#public-repository-privacy-rules) before writing any content.
 
 ## Commands
 
@@ -119,7 +119,7 @@ Don't hand-edit `version` fields or `CHANGELOG.md`; Changesets manages them.
 This repository and its npm package are public. Everything committed (code, comments, docs, examples, changesets, commit messages, PR text, screenshots) is permanently visible and indexed.
 
 **Never commit personal information about the maintainer or anyone else**, including:
-- Real names (other than the existing `rangakamesh` handle in the package scope and repo URL), email addresses, phone numbers, street or city addresses.
+- Real names (other than the existing `rangakamesh` / `rangakamesh-packages` handles in the repo URL and package scope), email addresses, phone numbers, street or city addresses.
 - Employers, job titles or history, schools, dates of birth, or other résumé or portfolio content.
 - Photos or avatars of real people, names of private projects, links to personal social profiles.
 - Local machine details: absolute paths like `/Users/<name>/…`, usernames, hostnames.

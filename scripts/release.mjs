@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Local release for @rangakamesh/core-ui → npmjs.com
+ * Local release for @rangakamesh-packages/core-ui → npmjs.com
  *
  *   npm run release                    # full release
  *   npm run release -- --dry-run       # run every check + `npm publish --dry-run`, change nothing
@@ -25,7 +25,7 @@ import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const pkgDir = join(root, "packages", "core-ui");
-const PKG = "@rangakamesh/core-ui";
+const PKG = "@rangakamesh-packages/core-ui";
 const REGISTRY = "https://registry.npmjs.org/";
 
 const args = process.argv.slice(2);

@@ -43,7 +43,7 @@ async function build() {
     decls(t.layout),
   ].join("\n");
 
-  const tokensCss = `/* @rangakamesh/core-ui tokens: generated from src/tokens/index.ts. Do not edit. */
+  const tokensCss = `/* @rangakamesh-packages/core-ui tokens: generated from src/tokens/index.ts. Do not edit. */
 :root {
 ${staticTokens}
 }
@@ -73,7 +73,7 @@ ${decls(t.darkColors, "", "    ")}
     .filter((f) => f.endsWith(".css"))
     .sort();
 
-  const stylesCss = `/* @rangakamesh/core-ui: generated. Edit src/styles or src/tokens instead. */
+  const stylesCss = `/* @rangakamesh-packages/core-ui: generated. Edit src/styles or src/tokens instead. */
 /* Layer order: anything unlayered (or a later layer such as Tailwind utilities) wins. */
 @layer rk.tokens, rk.base, rk.components;
 
@@ -96,11 +96,11 @@ ${componentFiles.map((f) => `/* ${f} */\n${read(join("components", f))}`).join("
     Object.keys(obj)
       .map((k) => `  --${ns}-${t.toKebab(k)}: var(${map(k)});`)
       .join("\n");
-  const tailwindCss = `/* @rangakamesh/core-ui Tailwind v4 bridge: generated.
+  const tailwindCss = `/* @rangakamesh-packages/core-ui Tailwind v4 bridge: generated.
    Usage (globals.css):
      @import "tailwindcss";
-     @import "@rangakamesh/core-ui/styles.css";
-     @import "@rangakamesh/core-ui/tailwind.css";
+     @import "@rangakamesh-packages/core-ui/styles.css";
+     @import "@rangakamesh-packages/core-ui/tailwind.css";
 */
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 

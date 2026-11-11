@@ -1,4 +1,4 @@
-# @rangakamesh/core-ui
+# @rangakamesh-packages/core-ui
 
 Personal React component library and design tokens, styled after [rangakamesh.net](https://www.rangakamesh.net). Built for Next.js (App Router, React Server Components), and works in any React app.
 
@@ -11,10 +11,10 @@ Personal React component library and design tokens, styled after [rangakamesh.ne
 ## Install
 
 ```bash
-npm install @rangakamesh/core-ui
+npm install @rangakamesh-packages/core-ui
 ```
 
-Update later with `npm update @rangakamesh/core-ui`.
+Update later with `npm update @rangakamesh-packages/core-ui`.
 
 ## Set up in a Next.js app
 
@@ -22,9 +22,9 @@ Update later with `npm update @rangakamesh/core-ui`.
 
 ```tsx
 import { Saira_Extra_Condensed } from "next/font/google";
-import { ThemeScript } from "@rangakamesh/core-ui";
-import { ThemeProvider } from "@rangakamesh/core-ui/client";
-import "@rangakamesh/core-ui/styles.css";
+import { ThemeScript } from "@rangakamesh-packages/core-ui";
+import { ThemeProvider } from "@rangakamesh-packages/core-ui/client";
+import "@rangakamesh-packages/core-ui/styles.css";
 import "./globals.css";
 
 const saira = Saira_Extra_Condensed({
@@ -58,7 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 **3. Use components** (works directly in Server Components)
 
 ```tsx
-import { Button, Card, CardHeader, Heading, Subheading, Badge, Text } from "@rangakamesh/core-ui";
+import { Button, Card, CardHeader, Heading, Subheading, Badge, Text } from "@rangakamesh-packages/core-ui";
 
 export default function Page() {
   return (
@@ -81,7 +81,7 @@ export default function Page() {
 
 ```tsx
 import Link from "next/link";
-import { buttonClassName } from "@rangakamesh/core-ui";
+import { buttonClassName } from "@rangakamesh-packages/core-ui";
 
 <Link href="/cv" className={buttonClassName({ variant: "outline" })}>Download CV</Link>
 ```
@@ -95,7 +95,7 @@ Passing `next/link` as a prop must happen inside a `"use client"` file, because 
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { SideNav, ThemeToggle } from "@rangakamesh/core-ui/client";
+import { SideNav, ThemeToggle } from "@rangakamesh-packages/core-ui/client";
 
 const items = [{ href: "/", label: "About" }, { href: "/projects", label: "Projects" }];
 
@@ -120,7 +120,7 @@ export function Nav() {
 
 ## Components
 
-| Import from `@rangakamesh/core-ui` (server-safe) | |
+| Import from `@rangakamesh-packages/core-ui` (server-safe) | |
 | --- | --- |
 | `Button`, `buttonClassName()` | variants `primary` `secondary` `outline` `ghost` `danger`; sizes `sm` `md` `lg`; `block`, `responsive`, `loading` |
 | `IconButton`, `IconLink`, `IconGroup`, `iconButtonClassName()` | circular icon buttons; `effect="fill"` (social) or `"pop"` |
@@ -132,7 +132,7 @@ export function Nav() {
 | `ThemeScript` | inline no-flash theme script for `<head>` |
 | `tokens`, `lightColors`, `darkColors`, `cssVar()` | tokens in JS (e.g. chart colours: `cssVar("primary")`) |
 
-| Import from `@rangakamesh/core-ui/client` | |
+| Import from `@rangakamesh-packages/core-ui/client` | |
 | --- | --- |
 | `ThemeProvider`, `useTheme()` | `theme`, `resolvedTheme`, `setTheme`, `toggleTheme` |
 | `ThemeToggle` | sun/moon button |
@@ -156,8 +156,8 @@ Library styles live in `@layer rk.*`, so unlayered CSS and Tailwind utilities al
 ```css
 /* globals.css */
 @import "tailwindcss";
-@import "@rangakamesh/core-ui/styles.css";
-@import "@rangakamesh/core-ui/tailwind.css";
+@import "@rangakamesh-packages/core-ui/styles.css";
+@import "@rangakamesh-packages/core-ui/tailwind.css";
 ```
 
 You can then use `bg-surface`, `text-primary`, `border-border`, `text-text-muted`, `font-heading`, `rounded-md`, `shadow-lg` and `dark:` (tied to `data-theme="dark"`).
@@ -166,6 +166,6 @@ You can then use `bg-surface`, `text-primary`, `border-border`, `text-text-muted
 
 | Path | Contents |
 | --- | --- |
-| `@rangakamesh/core-ui/styles.css` | tokens + base element styles + all components |
-| `@rangakamesh/core-ui/tokens.css` | CSS variables only (for non-React sites) |
-| `@rangakamesh/core-ui/tailwind.css` | Tailwind v4 `@theme` bridge |
+| `@rangakamesh-packages/core-ui/styles.css` | tokens + base element styles + all components |
+| `@rangakamesh-packages/core-ui/tokens.css` | CSS variables only (for non-React sites) |
+| `@rangakamesh-packages/core-ui/tailwind.css` | Tailwind v4 `@theme` bridge |

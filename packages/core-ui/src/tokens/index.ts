@@ -3,7 +3,7 @@
  *  DESIGN TOKENS: the single source of truth for the whole kit.
  *
  *  Edit values here, run `npm run build`, publish a new version, and every
- *  project that updates `@rangakamesh/core-ui` picks up the new look.
+ *  project that updates `@rangakamesh-packages/core-ui` picks up the new look.
  *
  *  Each key becomes a CSS custom property:  colors.primary → --rk-primary
  *  Components only ever reference these variables, never raw values.

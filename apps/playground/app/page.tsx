@@ -34,7 +34,7 @@ import {
   darkColors,
   lightColors,
   toKebab,
-} from "@rangakamesh/core-ui";
+} from "@rangakamesh-packages/core-ui";
 import { Nav } from "./Nav";
 
 const GitHub = () => (

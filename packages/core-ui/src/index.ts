@@ -1,5 +1,5 @@
 // Server-safe components (usable in React Server Components) + design tokens.
-// Interactive pieces live in "@rangakamesh/core-ui/client".
+// Interactive pieces live in "@rangakamesh-packages/core-ui/client".
 
 export * from "./components/Button.tsx";
 export * from "./components/IconButton.tsx";

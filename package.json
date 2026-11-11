@@ -6,8 +6,8 @@
     "apps/*"
   ],
   "scripts": {
-    "build": "npm run build -w @rangakamesh/core-ui",
-    "dev": "npm run build && concurrently -k -n ui,play -c teal,gray \"npm run dev -w @rangakamesh/core-ui\" \"npm run dev -w playground\"",
+    "build": "npm run build -w @rangakamesh-packages/core-ui",
+    "dev": "npm run build && concurrently -k -n ui,play -c teal,gray \"npm run dev -w @rangakamesh-packages/core-ui\" \"npm run dev -w playground\"",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "changeset": "changeset",
     "release": "node scripts/release.mjs"

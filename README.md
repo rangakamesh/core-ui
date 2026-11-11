@@ -1,6 +1,6 @@
 # core-ui
 
-Monorepo for **`@rangakamesh/core-ui`**, the shared design system for all my projects, extracted from [rangakamesh.net](https://www.rangakamesh.net).
+Monorepo for **`@rangakamesh-packages/core-ui`**, the shared design system for all my projects, extracted from [rangakamesh.net](https://www.rangakamesh.net).
 
 ```
 core-ui/
@@ -39,7 +39,7 @@ npm run typecheck  # typecheck library + playground
    - **major**: renamed/removed components, props or `--rk-*` variables
 3. Commit the changeset with your changes and push.
 4. `npm run release` publishes the new version to npmjs.com (see below).
-5. In each project: `npm update @rangakamesh/core-ui` (or `npm i @rangakamesh/core-ui@latest`).
+5. In each project: `npm update @rangakamesh-packages/core-ui` (or `npm i @rangakamesh-packages/core-ui@latest`).
 
 Projects using a `^` range only take non-breaking updates when they run `npm update`, so a breaking redesign is opt-in per project. (While on `0.x`, npm treats each minor as breaking: `^0.1.0` won't pick up `0.2.0`. Release `1.0.0` once the API feels settled.)
 
@@ -63,11 +63,11 @@ Flags: `--dry-run`, `--yes` (skip the prompt), `--otp=123456` (if your npm accou
 
 The token is only read from the environment. npm receives a temporary config file containing the literal text `${NPM_TOKEN}`, so the token value never touches disk or the repo.
 
-**One-time setup:** create an npmjs.com account named `rangakamesh` (this gives you the `@rangakamesh` scope), then go to Access Tokens → **Granular Access Token** with read and write access to packages. If your account enforces 2FA for publishing, either enable "bypass 2FA" on the token or pass `--otp`.
+**One-time setup:** publish rights on the npm organisation `rangakamesh-packages` (which owns the `@rangakamesh-packages` scope), then go to Access Tokens → **Granular Access Token** with read and write access to packages. If your account enforces 2FA for publishing, either enable "bypass 2FA" on the token or pass `--otp`.
 
 ### Trying it in a local project before publishing
 
 ```bash
-cd packages/core-ui && npm run build && npm pack      # creates rangakamesh-core-ui-0.1.0.tgz
-cd ~/…/my-next-app && npm i ../core-ui/packages/core-ui/rangakamesh-core-ui-0.1.0.tgz
+cd packages/core-ui && npm run build && npm pack      # creates rangakamesh-packages-core-ui-0.1.0.tgz
+cd ~/…/my-next-app && npm i ../core-ui/packages/core-ui/rangakamesh-packages-core-ui-0.1.0.tgz
 ```

@@ -4,7 +4,7 @@
 // components can't be sent as props from a Server Component.
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { SideNav, ThemeToggle } from "@rangakamesh/core-ui/client";
+import { SideNav, ThemeToggle } from "@rangakamesh-packages/core-ui/client";
 
 const sections = ["tokens", "buttons", "cards", "badges", "typography", "forms", "layout"];
 
